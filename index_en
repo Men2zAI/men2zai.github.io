@@ -2,70 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Men2zAI | Smart Solutions</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function toggleLanguage() {
-      const lang = document.documentElement.lang;
-      const url = lang === "en" ? "index.html" : "index_en.html";
-      window.location.href = url;
-    }
-  </script>
 </head>
 <body>
-  <header>
-    <div class="logo">Men2z<span class="ai">AI</span></div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#catalog">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button onclick="toggleLanguage()" class="lang-switch">🌐</button>
+
+  <!-- 🟦 Header with banner -->
+  <header class="hero-banner">
+    <img src="banner.jpg" alt="Men2zAI Banner">
   </header>
 
-  <section id="hero">
-    <h1>Smart Solutions Within Reach</h1>
-    <p>Automation, mobile apps, bots, IoT and more...</p>
-    <a href="#catalog" class="cta">Explore Services</a>
-  </section>
+  <main class="container">
+    <h1>Welcome to Men2zAI</h1>
+    <p>Your strategic partner in automation, artificial intelligence, and cutting-edge tech solutions.</p>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      Men2zAI was born with the mission to provide smart technology solutions for small businesses and entrepreneurs.
-      We create bots, automated systems, mobile apps and web platforms that save time, reduce costs, and increase productivity.
-    </p>
-  </section>
+    <section>
+      <h2>What we do</h2>
+      <ul>
+        <li>Process automation</li>
+        <li>Bot development and virtual assistants</li>
+        <li>Custom WebApps</li>
+        <li>Efficient mobile applications</li>
+        <li>IoT and embedded system solutions</li>
+      </ul>
+    </section>
 
-  <section id="catalog">
-    <h2 id="catalog-title">Service Catalog</h2>
-    <div class="catalog-container">
-      <div class="card">
-        <h3>🤖 Process Automation</h3>
-        <p>Telegram, WhatsApp, Discord bots, repetitive task automation, scraping, and more.</p>
-      </div>
-      <div class="card">
-        <h3>📱 Mobile Applications</h3>
-        <p>Hybrid and native apps with attractive design and tailored features.</p>
-      </div>
-      <div class="card">
-        <h3>🌐 WebApps and Websites</h3>
-        <p>Modern and responsive portals for desktop and mobile.</p>
-      </div>
-      <div class="card">
-        <h3>📊 Monitoring and IoT</h3>
-        <p>Systems with sensors, dashboards, and remote control via web or app.</p>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>Contact us</h2>
+      <p>📧 Email: yourmail@men2zai.com</p>
+      <p>📨 Telegram: <a href="https://t.me/+5pY_HK4JqgA5MmUx" target="_blank">@men2zai</a></p>
+    </section>
 
-  <footer>
-    <p>© 2025 Men2zAI. All rights reserved.</p>
-    <p>Contact us via <a href="https://t.me/+5pY_HK4JqgA5MmUx" target="_blank">Telegram</a> or by email.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 Men2zAI - All rights reserved.</p>
+      <p><a href="index.html">🌐 Español</a></p>
+    </footer>
+  </main>
+
 </body>
 </html>

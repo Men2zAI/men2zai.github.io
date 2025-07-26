@@ -6,6 +6,140 @@
   <title>Men2zAI | Soluciones Inteligentes</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --color-principal: #1e1e2f;
+      --color-secundario: #00d4ff;
+      --color-texto: #f4f4f4;
+      --color-fondo: #121212;
+      --color-acento: #00ffa2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--color-principal);
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    nav h1 {
+      color: var(--color-acento);
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--color-texto);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(to right, #1e1e2f, #2a2a40);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: var(--color-acento);
+    }
+
+    .hero p {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-secundario);
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--color-acento);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1e1e2f;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .card i {
+      margin-bottom: 0.5rem;
+      color: var(--color-secundario);
+    }
+
+    footer {
+      background: var(--color-principal);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    a {
+      color: var(--color-secundario);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
 <body>
   <header>

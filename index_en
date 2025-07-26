@@ -10,7 +10,7 @@
 
   <!-- 🟦 Header with banner -->
   <header class="hero-banner">
-    <img src="banner.jpg" alt="Men2zAI Banner">
+    <img src="banner.png" alt="Men2zAI Banner">
   </header>
 
   <main class="container">

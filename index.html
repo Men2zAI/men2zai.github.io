@@ -1,50 +1,70 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Men2zAI - Soluciones inteligentes en automatización, bots y desarrollo tecnológico.">
-    <title>Men2zAI Tech Solutions</title>
+    <title>Men2zAI | Tech Solutions</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Men2zAI</h1>
-        <nav>
-            <a href="#about">Sobre Nosotros</a>
-            <a href="#services">Servicios</a>
-            <a href="#contact">Contacto</a>
-            <button onclick="toggleLang()">EN/ES</button>
-        </nav>
+        <div class="container">
+            <h1><span class="highlight">Men2zAI</span> Tech Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button id="lang-toggle">ES</button></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="home">
-            <h2>Soluciones inteligentes a tu medida</h2>
-            <p id="intro-text">Automatización, Bots, WebApps, Apps móviles e Inteligencia Artificial.</p>
-        </section>
-        <section id="about">
-            <h2>Sobre Nosotros</h2>
-            <p id="about-text">Men2zAI Tech Solutions es una empresa dedicada a ofrecer soluciones tecnológicas innovadoras y accesibles para automatizar procesos, crear asistentes virtuales, apps móviles y más.</p>
-        </section>
-        <section id="services">
-            <h2>Servicios</h2>
-            <ul id="services-list">
-                <li>🤖 Bots para redes y negocios</li>
-                <li>🔄 Automatización de tareas</li>
-                <li>🌐 WebApps personalizadas</li>
-                <li>📱 Aplicaciones móviles</li>
-                <li>🧠 Soluciones con Inteligencia Artificial</li>
+
+    <section id="hero">
+        <div class="container">
+            <h2 data-en="Innovation powered by AI" data-es="Innovación impulsada por IA">Innovation powered by AI</h2>
+            <p data-en="We create smart tools and bots that optimize time, resources, and growth for your business."
+               data-es="Creamos herramientas inteligentes y bots que optimizan tiempo, recursos y crecimiento para tu negocio.">
+               We create smart tools and bots that optimize time, resources, and growth for your business.
+            </p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 data-en="About Us" data-es="Sobre Nosotros">About Us</h2>
+            <p data-en="Men2zAI is a startup focused on automation, bots, apps, and web solutions."
+               data-es="Men2zAI es una startup enfocada en automatización, bots, apps y soluciones web.">
+               Men2zAI is a startup focused on automation, bots, apps, and web solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="section alt">
+        <div class="container">
+            <h2 data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+            <ul class="grid">
+                <li data-en="Custom Telegram/Discord Bots" data-es="Bots personalizados para Telegram/Discord">Custom Telegram/Discord Bots</li>
+                <li data-en="Automation Scripts" data-es="Scripts de Automatización">Automation Scripts</li>
+                <li data-en="Web Apps and Mobile Interfaces" data-es="Apps Web y Móviles">Web Apps and Mobile Interfaces</li>
+                <li data-en="Cloud & Edge AI Solutions" data-es="Soluciones de IA en la Nube y el Borde">Cloud & Edge AI Solutions</li>
             </ul>
-        </section>
-        <section id="contact">
-            <h2>Contacto</h2>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-en="Get in Touch" data-es="Contáctanos">Get in Touch</h2>
+            <p>Email: <strong>men2zai@outlook.com</strong></p>
             <p>Telegram: <a href="https://t.me/+5pY_HK4JqgA5MmUx" target="_blank">@Men2zAI</a></p>
-            <p>Email: <span id="email">alejandro@men2zai.tech</span></p>
-        </section>
-    </main>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Men2zAI. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Men2zAI. All rights reserved.</p>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>

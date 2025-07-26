@@ -58,6 +58,17 @@
       font-weight: bold;
     }
 
+    .lang-switch {
+      cursor: pointer;
+      background-color: var(--color-secundario);
+      color: #000;
+      padding: 0.4rem 0.7rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-left: 1rem;
+    }
+
     .hero {
       padding: 4rem 2rem;
       text-align: center;
@@ -146,54 +157,55 @@
     <nav>
       <h1><i class="fas fa-brain"></i> Men2zAI</h1>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#inicio" data-key="nav_inicio">Inicio</a></li>
+        <li><a href="#servicios" data-key="nav_servicios">Servicios</a></li>
+        <li><a href="#nosotros" data-key="nav_nosotros">Nosotros</a></li>
+        <li><a href="#contacto" data-key="nav_contacto">Contacto</a></li>
       </ul>
+      <button class="lang-switch" onclick="switchLanguage()">EN</button>
     </nav>
   </header>
 
   <section id="inicio" class="hero">
-    <h2><i class="fas fa-rocket"></i> Automatización Inteligente para tu Negocio</h2>
-    <p>Transformamos ideas en soluciones con IA, bots y apps personalizadas.</p>
-    <a href="#contacto" class="cta">Contáctanos</a>
+    <h2 data-key="hero_titulo"><i class="fas fa-rocket"></i> Automatización Inteligente para tu Negocio</h2>
+    <p data-key="hero_desc">Transformamos ideas en soluciones con IA, bots y apps personalizadas.</p>
+    <a href="#contacto" class="cta" data-key="cta_contacto">Contáctanos</a>
   </section>
 
   <section id="servicios">
-    <h2><i class="fas fa-cogs"></i> ¿Qué hacemos?</h2>
+    <h2 data-key="servicios_titulo"><i class="fas fa-cogs"></i> ¿Qué hacemos?</h2>
     <div class="card-container">
       <div class="card">
         <i class="fas fa-robot fa-2x"></i>
-        <h3>Bots Inteligentes</h3>
-        <p>Automatiza tareas repetitivas en Telegram, Discord o web con nuestros bots.</p>
+        <h3 data-key="serv1">Bots Inteligentes</h3>
+        <p data-key="serv1_desc">Automatiza tareas repetitivas en Telegram, Discord o web con nuestros bots.</p>
       </div>
       <div class="card">
         <i class="fas fa-mobile-alt fa-2x"></i>
-        <h3>Aplicaciones Móviles & Web</h3>
-        <p>Desarrollamos apps multiplataforma eficientes y funcionales.</p>
+        <h3 data-key="serv2">Aplicaciones Móviles & Web</h3>
+        <p data-key="serv2_desc">Desarrollamos apps multiplataforma eficientes y funcionales.</p>
       </div>
       <div class="card">
         <i class="fas fa-microchip fa-2x"></i>
-        <h3>Automatización & IoT</h3>
-        <p>Soluciones conectadas con sensores, microcontroladores y visualización en tiempo real.</p>
+        <h3 data-key="serv3">Automatización & IoT</h3>
+        <p data-key="serv3_desc">Soluciones conectadas con sensores, microcontroladores y visualización en tiempo real.</p>
       </div>
       <div class="card">
         <i class="fas fa-brain fa-2x"></i>
-        <h3>Inteligencia Artificial</h3>
-        <p>Asistentes, análisis de datos y modelos de IA que optimizan procesos.</p>
+        <h3 data-key="serv4">Inteligencia Artificial</h3>
+        <p data-key="serv4_desc">Asistentes, análisis de datos y modelos de IA que optimizan procesos.</p>
       </div>
     </div>
   </section>
 
   <section id="nosotros">
-    <h2><i class="fas fa-users"></i> ¿Quiénes Somos?</h2>
-    <p>Men2zAI nace de la fusión entre creatividad humana y potencia artificial. Nuestro equipo combina experiencia en programación, automatización e IA para llevar a nuestros clientes soluciones únicas, rápidas y escalables.</p>
+    <h2 data-key="nosotros_titulo"><i class="fas fa-users"></i> ¿Quiénes Somos?</h2>
+    <p data-key="nosotros_texto">Men2zAI nace de la fusión entre creatividad humana y potencia artificial. Nuestro equipo combina experiencia en programación, automatización e IA para llevar a nuestros clientes soluciones únicas, rápidas y escalables.</p>
   </section>
 
   <section id="contacto">
-    <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
-    <p>¡Estamos listos para escuchar tu idea!</p>
+    <h2 data-key="contacto_titulo"><i class="fas fa-envelope"></i> Contáctanos</h2>
+    <p data-key="contacto_desc">¡Estamos listos para escuchar tu idea!</p>
     <ul>
       <li><i class="fas fa-envelope"></i> Email: contacto@men2zai.com</li>
       <li><i class="fab fa-telegram"></i> Telegram: <a href="https://t.me/+5pY_HK4JqgA5MmUx">Únete a nuestro canal</a></li>
@@ -203,5 +215,66 @@
   <footer>
     <p>&copy; 2025 Men2zAI. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    const lang = {
+      es: {
+        nav_inicio: "Inicio",
+        nav_servicios: "Servicios",
+        nav_nosotros: "Nosotros",
+        nav_contacto: "Contacto",
+        hero_titulo: "<i class='fas fa-rocket'></i> Automatización Inteligente para tu Negocio",
+        hero_desc: "Transformamos ideas en soluciones con IA, bots y apps personalizadas.",
+        cta_contacto: "Contáctanos",
+        servicios_titulo: "<i class='fas fa-cogs'></i> ¿Qué hacemos?",
+        serv1: "Bots Inteligentes",
+        serv1_desc: "Automatiza tareas repetitivas en Telegram, Discord o web con nuestros bots.",
+        serv2: "Aplicaciones Móviles & Web",
+        serv2_desc: "Desarrollamos apps multiplataforma eficientes y funcionales.",
+        serv3: "Automatización & IoT",
+        serv3_desc: "Soluciones conectadas con sensores, microcontroladores y visualización en tiempo real.",
+        serv4: "Inteligencia Artificial",
+        serv4_desc: "Asistentes, análisis de datos y modelos de IA que optimizan procesos.",
+        nosotros_titulo: "<i class='fas fa-users'></i> ¿Quiénes Somos?",
+        nosotros_texto: "Men2zAI nace de la fusión entre creatividad humana y potencia artificial. Nuestro equipo combina experiencia en programación, automatización e IA para llevar a nuestros clientes soluciones únicas, rápidas y escalables.",
+        contacto_titulo: "<i class='fas fa-envelope'></i> Contáctanos",
+        contacto_desc: "¡Estamos listos para escuchar tu idea!"
+      },
+      en: {
+        nav_inicio: "Home",
+        nav_servicios: "Services",
+        nav_nosotros: "About",
+        nav_contacto: "Contact",
+        hero_titulo: "<i class='fas fa-rocket'></i> Smart Automation for Your Business",
+        hero_desc: "We turn ideas into solutions using AI, bots, and custom apps.",
+        cta_contacto: "Contact Us",
+        servicios_titulo: "<i class='fas fa-cogs'></i> What We Do",
+        serv1: "Smart Bots",
+        serv1_desc: "Automate repetitive tasks on Telegram, Discord or the web.",
+        serv2: "Mobile & Web Apps",
+        serv2_desc: "We develop efficient and functional cross-platform apps.",
+        serv3: "Automation & IoT",
+        serv3_desc: "Connected solutions with sensors, microcontrollers, and real-time visualization.",
+        serv4: "Artificial Intelligence",
+        serv4_desc: "Assistants, data analysis and AI models that optimize processes.",
+        nosotros_titulo: "<i class='fas fa-users'></i> About Us",
+        nosotros_texto: "Men2zAI is born from the fusion of human creativity and artificial power. Our team combines experience in programming, automation, and AI to deliver unique, fast and scalable solutions.",
+        contacto_titulo: "<i class='fas fa-envelope'></i> Contact",
+        contacto_desc: "We're ready to hear your idea!"
+      }
+    };
+
+    let currentLang = 'es';
+
+    function switchLanguage() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      document.querySelector('.lang-switch').textContent = currentLang === 'es' ? 'EN' : 'ES';
+
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        el.innerHTML = lang[currentLang][key];
+      });
+    }
+  </script>
 </body>
 </html>

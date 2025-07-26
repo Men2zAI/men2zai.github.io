@@ -1,268 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Men2zAI | Soluciones Inteligentes</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --color-principal: #1e1e2f;
-      --color-secundario: #00d4ff;
-      --color-texto: #f4f4f4;
-      --color-fondo: #121212;
-      --color-acento: #00ffa2;
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function toggleLanguage() {
+      const lang = document.documentElement.lang;
+      const url = lang === "es" ? "index_en.html" : "index.html";
+      window.location.href = url;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--color-fondo);
-      color: var(--color-texto);
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--color-principal);
-      padding: 1rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    nav h1 {
-      color: var(--color-acento);
-      font-size: 1.8rem;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1rem;
-    }
-
-    nav a {
-      color: var(--color-texto);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .lang-switch {
-      cursor: pointer;
-      background-color: var(--color-secundario);
-      color: #000;
-      padding: 0.4rem 0.7rem;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin-left: 1rem;
-    }
-
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: linear-gradient(to right, #1e1e2f, #2a2a40);
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      color: var(--color-acento);
-    }
-
-    .hero p {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--color-secundario);
-      color: #000;
-      font-weight: bold;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: var(--color-acento);
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: #1e1e2f;
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .card i {
-      margin-bottom: 0.5rem;
-      color: var(--color-secundario);
-    }
-
-    footer {
-      background: var(--color-principal);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-
-    a {
-      color: var(--color-secundario);
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
-  </style>
+  </script>
 </head>
 <body>
   <header>
+    <div class="logo">Men2z<span class="ai">AI</span></div>
     <nav>
-      <h1><i class="fas fa-brain"></i> Men2zAI</h1>
       <ul>
-        <li><a href="#inicio" data-key="nav_inicio">Inicio</a></li>
-        <li><a href="#servicios" data-key="nav_servicios">Servicios</a></li>
-        <li><a href="#nosotros" data-key="nav_nosotros">Nosotros</a></li>
-        <li><a href="#contacto" data-key="nav_contacto">Contacto</a></li>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#catalog">Servicios</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
-      <button class="lang-switch" onclick="switchLanguage()">EN</button>
     </nav>
+    <button onclick="toggleLanguage()" class="lang-switch">🌐</button>
   </header>
 
-<section id="services">
-  <h2 id="services-title">Nuestros servicios</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712067.png" alt="Bot Icon" />
-      <h3 id="service1">Desarrollo de Bots</h3>
-      <p id="desc1">Telegram, Discord, WhatsApp, automatizaciones inteligentes a medida.</p>
-    </div>
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="Web Icon" />
-      <h3 id="service2">WebApps y Landing Pages</h3>
-      <p id="desc2">Sitios modernos, rápidos y adaptados a tu idea.</p>
-    </div>
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/2502/2502399.png" alt="IoT Icon" />
-      <h3 id="service3">Proyectos IoT</h3>
-      <p id="desc3">Sensores, controladores, monitoreo y más usando Arduino, ESP, etc.</p>
-    </div>
-  </div>
-</section>
-<section id="about">
-  <h2 id="about-title">Sobre Nosotros</h2>
-  <div class="about-container">
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Founder Icon">
-    <div class="about-text">
-      <p id="about-text">
-        En Men2zAI, combinamos innovación, IA y creatividad para ofrecer soluciones tecnológicas prácticas. Fundada por Alejandro M., un apasionado por la automatización y la inteligencia artificial, nuestra misión es hacer que la tecnología trabaje para ti.
-      </p>
-    </div>
-  </div>
-</section>
+  <section id="hero">
+    <h1>Soluciones Inteligentes a tu Alcance</h1>
+    <p>Automatización, apps móviles, bots, IoT y más...</p>
+    <a href="#catalog" class="cta">Explorar Servicios</a>
+  </section>
 
+  <section id="about">
+    <h2>¿Quiénes Somos?</h2>
+    <p>
+      Men2zAI nace con la misión de brindar soluciones tecnológicas inteligentes para pequeñas empresas y emprendedores.
+      Creamos bots, sistemas automatizados, apps móviles y plataformas web que ahorran tiempo, reducen costos y elevan tu productividad.
+    </p>
+  </section>
+
+  <section id="catalog">
+    <h2 id="catalog-title">Catálogo de Servicios</h2>
+    <div class="catalog-container">
+      <div class="card">
+        <h3>🤖 Automatización de Procesos</h3>
+        <p>Bot de Telegram, WhatsApp, Discord, tareas repetitivas, scraping y más.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Aplicaciones Móviles</h3>
+        <p>Apps híbridas y nativas con diseño atractivo y funcionalidades específicas.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 WebApps y Sitios Web</h3>
+        <p>Desarrollo de portales modernos y optimizados para PC y móvil.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Monitoreo e IoT</h3>
+        <p>Sistemas con sensores, dashboards y control remoto vía web o app.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Men2zAI. Todos los derechos reservados.</p>
+    <p>© 2025 Men2zAI. Todos los derechos reservados.</p>
+    <p>Contáctanos vía <a href="https://t.me/+5pY_HK4JqgA5MmUx" target="_blank">Telegram</a> o por email.</p>
   </footer>
-
-  <script>
-    const lang = {
-      es: {
-        nav_inicio: "Inicio",
-        nav_servicios: "Servicios",
-        nav_nosotros: "Nosotros",
-        nav_contacto: "Contacto",
-        hero_titulo: "<i class='fas fa-rocket'></i> Automatización Inteligente para tu Negocio",
-        hero_desc: "Transformamos ideas en soluciones con IA, bots y apps personalizadas.",
-        cta_contacto: "Contáctanos",
-        servicios_titulo: "<i class='fas fa-cogs'></i> ¿Qué hacemos?",
-        serv1: "Bots Inteligentes",
-        serv1_desc: "Automatiza tareas repetitivas en Telegram, Discord o web con nuestros bots.",
-        serv2: "Aplicaciones Móviles & Web",
-        serv2_desc: "Desarrollamos apps multiplataforma eficientes y funcionales.",
-        serv3: "Automatización & IoT",
-        serv3_desc: "Soluciones conectadas con sensores, microcontroladores y visualización en tiempo real.",
-        serv4: "Inteligencia Artificial",
-        serv4_desc: "Asistentes, análisis de datos y modelos de IA que optimizan procesos.",
-        nosotros_titulo: "<i class='fas fa-users'></i> ¿Quiénes Somos?",
-        nosotros_texto: "Men2zAI nace de la fusión entre creatividad humana y potencia artificial. Nuestro equipo combina experiencia en programación, automatización e IA para llevar a nuestros clientes soluciones únicas, rápidas y escalables.",
-        contacto_titulo: "<i class='fas fa-envelope'></i> Contáctanos",
-        contacto_desc: "¡Estamos listos para escuchar tu idea!"
-      },
-      en: {
-        nav_inicio: "Home",
-        nav_servicios: "Services",
-        nav_nosotros: "About",
-        nav_contacto: "Contact",
-        hero_titulo: "<i class='fas fa-rocket'></i> Smart Automation for Your Business",
-        hero_desc: "We turn ideas into solutions using AI, bots, and custom apps.",
-        cta_contacto: "Contact Us",
-        servicios_titulo: "<i class='fas fa-cogs'></i> What We Do",
-        serv1: "Smart Bots",
-        serv1_desc: "Automate repetitive tasks on Telegram, Discord or the web.",
-        serv2: "Mobile & Web Apps",
-        serv2_desc: "We develop efficient and functional cross-platform apps.",
-        serv3: "Automation & IoT",
-        serv3_desc: "Connected solutions with sensors, microcontrollers, and real-time visualization.",
-        serv4: "Artificial Intelligence",
-        serv4_desc: "Assistants, data analysis and AI models that optimize processes.",
-        nosotros_titulo: "<i class='fas fa-users'></i> About Us",
-        nosotros_texto: "Men2zAI is born from the fusion of human creativity and artificial power. Our team combines experience in programming, automation, and AI to deliver unique, fast and scalable solutions.",
-        contacto_titulo: "<i class='fas fa-envelope'></i> Contact",
-        contacto_desc: "We're ready to hear your idea!"
-      }
-    };
-
-    let currentLang = 'es';
-
-    function switchLanguage() {
-      currentLang = currentLang === 'es' ? 'en' : 'es';
-      document.querySelector('.lang-switch').textContent = currentLang === 'es' ? 'EN' : 'ES';
-
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        el.innerHTML = lang[currentLang][key];
-      });
-    }
-  </script>
 </body>
 </html>
-

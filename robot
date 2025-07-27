@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robótica - ViceAI Lab</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,22 +12,23 @@
     <button class="lang-switch" onclick="window.location.href='robot_en.html'">EN</button>
   </header>
 
-  <section class="section-title">
-    <h1>Proyectos de Robótica y Automatización</h1>
-    <p>Soluciones con visión artificial y control inteligente</p>
+  <section id="hero">
+    <h1>Automatización y Robótica</h1>
+    <p>Proyectos con visión artificial y control inteligente</p>
   </section>
 
   <section class="portfolio">
+    <h2 class="section-title">Nuestros Proyectos</h2>
     <div class="portfolio-container">
       <div class="portfolio-item">
         <img src="proyectos/robot1.png" alt="Robot 1" />
-        <h3>Brazo Robótico con Reconocimiento de Objetos</h3>
-        <p>Desarrollado con OpenCV y controlado por ESP32-CAM.</p>
+        <h3>Brazo Robótico con IA</h3>
+        <p>Controlado por ESP32 y cámara integrada con OpenCV.</p>
       </div>
       <div class="portfolio-item">
         <img src="proyectos/robot2.png" alt="Robot 2" />
         <h3>Seguidor de Línea Inteligente</h3>
-        <p>Usando sensores IR y lógica difusa en Arduino.</p>
+        <p>Basado en Arduino y lógica difusa.</p>
       </div>
     </div>
   </section>

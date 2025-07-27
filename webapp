@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web App - ViceAI Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desarrollo Web - ViceAI Lab</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,22 +12,23 @@
     <button class="lang-switch" onclick="window.location.href='webapp_en.html'">EN</button>
   </header>
 
-  <section class="section-title">
-    <h1>Proyectos de Desarrollo Web</h1>
-    <p>Diseños modernos y adaptativos para todos los dispositivos</p>
+  <section id="hero">
+    <h1>Diseño y Desarrollo Web</h1>
+    <p>Landing pages, paneles administrativos y apps responsivas</p>
   </section>
 
   <section class="portfolio">
+    <h2 class="section-title">Proyectos Web</h2>
     <div class="portfolio-container">
       <div class="portfolio-item">
-        <img src="proyectos/web1.png" alt="Web 1" />
-        <h3>Landing Page para Startup</h3>
-        <p>HTML, CSS y animaciones ligeras para captar leads.</p>
+        <img src="proyectos/web1.png" alt="Proyecto Web 1" />
+        <h3>Landing Page para Startups</h3>
+        <p>HTML + CSS moderno con animaciones para conversión.</p>
       </div>
       <div class="portfolio-item">
-        <img src="proyectos/web2.png" alt="Web 2" />
-        <h3>Panel de Control con Bootstrap</h3>
-        <p>Dashboard interactivo con estadísticas en tiempo real.</p>
+        <img src="proyectos/web2.png" alt="Proyecto Web 2" />
+        <h3>Dashboard Interactivo</h3>
+        <p>Bootstrap + JavaScript con visualización de datos.</p>
       </div>
     </div>
   </section>

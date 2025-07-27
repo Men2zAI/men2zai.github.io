@@ -2,74 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Men2zAI | Smart Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViceLab Services</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- 🟦 Header with banner -->
-  <header class="hero-banner">
-    <img src="banner.png" alt="Men2zAI Banner">
+  <header>
+    <div class="logo">Vice<span class="ai">AI</span>Lab</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="lang-switch" onclick="window.location.href='index.html'">ES</button>
   </header>
 
-  <main class="container">
-    <h1>Welcome to Men2zAI</h1>
-    <p>Your strategic partner in automation, artificial intelligence, and cutting-edge tech solutions.</p>
+  <section id="hero">
+    <h1>AI and IoT solutions within reach</h1>
+    <p>We build smart ideas for a connected world</p>
+    <a href="#services" class="cta">See services</a>
+  </section>
 
-    <section>
-      <h2>What we do</h2>
-      <ul>
-        <li>Process automation</li>
-        <li>Bot development and virtual assistants</li>
-        <li>Custom WebApps</li>
-        <li>Efficient mobile applications</li>
-        <li>IoT and embedded system solutions</li>
-      </ul>
-    </section>
+  <section id="services" class="services">
+    <h2 class="section-title">Service Catalog</h2>
+    <div class="services-container">
+      <div class="service-box">
+        <img src="icons/ai-webapp.png" alt="AI Webapp">
+        <p>AI-powered app development</p>
+      </div>
+      <div class="service-box">
+        <img src="icons/iot.png" alt="IoT">
+        <p>Custom IoT projects with Arduino or ESP</p>
+      </div>
+      <div class="service-box">
+        <img src="icons/robot.png" alt="Robotics">
+        <p>Automation and robotics with computer vision</p>
+      </div>
+      <div class="service-box">
+        <img src="icons/webapp.png" alt="Web App">
+        <p>Functional and responsive website design</p>
+      </div>
+    </div>
+  </section>
 
-<section class="catalogo">
-  <h2>Service Catalog</h2>
-  <div class="servicios-grid">
-    <div class="servicio">
-      <img src="icons/robot.png" alt="Bot">
-      <h3>Automation & Bots</h3>
-      <p>We build bots and automated flows for repetitive tasks or client interaction.</p>
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Our Projects</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="proyectos/proyecto1.png" alt="Project 1">
+        <h3>IoT Environmental Monitoring</h3>
+        <p>Arduino sensors and web dashboard with Chart.js</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="proyectos/proyecto2.png" alt="Project 2">
+        <h3>Fatigue Detection with AI</h3>
+        <p>Computer vision and Edge processing on Raspberry Pi</p>
+      </div>
     </div>
-    <div class="servicio">
-      <img src="icons/app.png" alt="App">
-      <h3>Mobile Apps</h3>
-      <p>Fast and functional development for Android and cross-platform solutions.</p>
-    </div>
-    <div class="servicio">
-      <img src="icons/iot.png" alt="IoT">
-      <h3>IoT Solutions</h3>
-      <p>Projects with sensors, Arduino, ESP32 boards and real-time monitoring.</p>
-    </div>
-    <div class="servicio">
-      <img src="icons/webapp.png" alt="WebApp">
-      <h3>Smart WebApps</h3>
-      <p>Custom web apps with modern design, forms and admin panels.</p>
-    </div>
-    <div class="servicio">
-      <img src="icons/ai.png" alt="AI">
-      <h3>Artificial Intelligence</h3>
-      <p>AI integration, smart bots, content generation and automation tools.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-    <section>
-      <h2>Contact us</h2>
-      <p>📧 Email: yourmail@men2zai.com</p>
-      <p>📨 Telegram: <a href="https://t.me/+5pY_HK4JqgA5MmUx" target="_blank">@men2zai</a></p>
-    </section>
+  <section id="testimonials" class="testimonios">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonial-box">
+      <p>"Thanks to ViceAI Lab, my IoT system runs perfectly. A brilliant team!"</p>
+      <span>– Juan R., Electrical Engineer</span>
+    </div>
+    <div class="testimonial-box">
+      <p>"I reached out for an AI app and they exceeded my expectations. 100% recommended."</p>
+      <span>– Carla M., Startup Founder</span>
+    </div>
+  </section>
 
-    <footer>
-      <p>&copy; 2025 Men2zAI - All rights reserved.</p>
-      <p><a href="index.html">🌐 Español</a></p>
-    </footer>
-  </main>
-
+  <footer>
+    <p>&copy; 2025 ViceAI Lab. All rights reserved.</p>
+    <p><a href="#contact">Contact</a> | <a href="#">Terms</a></p>
+  </footer>
 </body>
 </html>

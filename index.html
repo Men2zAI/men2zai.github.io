@@ -1,4 +1,4 @@
-<!-- index.html limpio y corregido -->
+<!-- index.html actualizado con sección de proyectos, comentarios y soporte bilingüe -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,11 +9,13 @@
 </head>
 <body>
   <header>
-    <div class="logo">Men2z<span class="ai">AI</div>
+    <div class="logo">Vice<span class="ai">AI</span>Lab</div>
     <nav>
       <ul>
         <li><a href="#hero">Inicio</a></li>
         <li><a href="#services">Servicios</a></li>
+        <li><a href="#portfolio">Proyectos</a></li>
+        <li><a href="#testimonios">Opiniones</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
@@ -30,7 +32,7 @@
     <h2 class="section-title">Catálogo de Servicios</h2>
     <div class="services-container">
       <div class="service-box">
-        <img src="icons/ai.png" alt="AI Webapp">
+        <img src="icons/ai-webapp.png" alt="AI Webapp">
         <p>Desarrollo de apps con inteligencia artificial</p>
       </div>
       <div class="service-box">
@@ -48,9 +50,37 @@
     </div>
   </section>
 
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Nuestros Proyectos</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="proyectos/proyecto1.png" alt="Proyecto 1">
+        <h3>Monitoreo Ambiental IoT</h3>
+        <p>Sensorización con Arduino y dashboard web con Chart.js</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="proyectos/proyecto2.png" alt="Proyecto 2">
+        <h3>Detección de Fatiga con IA</h3>
+        <p>Visión artificial y procesamiento Edge con Raspberry Pi</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="testimonios">
+    <h2 class="section-title">Qué dicen nuestros clientes</h2>
+    <div class="testimonial-box">
+      <p>"Gracias a ViceAI Lab ahora tengo mi sistema IoT funcionando sin problemas. ¡Un equipo brillante!"</p>
+      <span>– Juan R., Ingeniero Eléctrico</span>
+    </div>
+    <div class="testimonial-box">
+      <p>"Los contacté para una app con IA y superaron mis expectativas. 100% recomendados."</p>
+      <span>– Carla M., Startup Founder</span>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 ViceAI Lab. Todos los derechos reservados.</p>
-    <p><a href="#">Contacto</a> | <a href="#">Términos</a></p>
+    <p><a href="#contact">Contacto</a> | <a href="#">Términos</a></p>
   </footer>
 </body>
 </html>

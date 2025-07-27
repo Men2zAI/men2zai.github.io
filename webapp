@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web App - ViceAI Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Vice<span class="ai">AI</span>Lab</div>
+    <button class="lang-switch" onclick="window.location.href='webapp_en.html'">EN</button>
+  </header>
+
+  <section class="section-title">
+    <h1>Proyectos de Desarrollo Web</h1>
+    <p>Diseños modernos y adaptativos para todos los dispositivos</p>
+  </section>
+
+  <section class="portfolio">
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="proyectos/web1.png" alt="Web 1" />
+        <h3>Landing Page para Startup</h3>
+        <p>HTML, CSS y animaciones ligeras para captar leads.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="proyectos/web2.png" alt="Web 2" />
+        <h3>Panel de Control con Bootstrap</h3>
+        <p>Dashboard interactivo con estadísticas en tiempo real.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ViceAI Lab. Todos los derechos reservados.</p>
+    <a href="index.html">← Volver al inicio</a>
+  </footer>
+</body>
+</html>

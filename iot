@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-es="Proyectos IoT" data-en="IoT Projects">Proyectos IoT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">Vice<span class="ai">AI</span>Lab</div>
+    <button onclick="setLanguage('es')">ES</button>
+    <button onclick="setLanguage('en')">EN</button>
+  </header>
+
+  <main>
+    <h1 data-es="Proyectos de Internet de las Cosas (IoT)" data-en="Internet of Things (IoT) Projects">
+      Proyectos de Internet de las Cosas (IoT)
+    </h1>
+
+    <section class="project">
+      <h2 data-es="Sistema de Monitoreo Ambiental" data-en="Environmental Monitoring System">
+        Sistema de Monitoreo Ambiental
+      </h2>
+      <p data-es="Usamos sensores de temperatura, humedad y gas conectados a ESP8266, con datos visualizados en una dashboard web." 
+         data-en="We used temperature, humidity and gas sensors connected to an ESP8266, with data displayed on a web dashboard.">
+         Usamos sensores de temperatura, humedad y gas conectados a ESP8266, con datos visualizados en una dashboard web.
+      </p>
+    </section>
+
+    <section class="project">
+      <h2 data-es="Riego Automatizado Inteligente" data-en="Smart Automated Irrigation">
+        Riego Automatizado Inteligente
+      </h2>
+      <p data-es="Sistema basado en Arduino que activa el riego según la humedad del suelo, controlable por app." 
+         data-en="Arduino-based system that activates irrigation based on soil moisture, controllable via app.">
+         Sistema basado en Arduino que activa el riego según la humedad del suelo, controlable por app.
+      </p>
+    </section>
+
+  </main>
+
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-es]').forEach(el => {
+        el.innerText = el.dataset[lang];
+      });
+      document.documentElement.lang = lang;
+    }
+  </script>
+
+</body>
+</html>

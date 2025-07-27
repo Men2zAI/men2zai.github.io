@@ -1,96 +1,56 @@
+<!-- index.html limpio y corregido -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Men2zAI | Soluciones inteligentes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViceLab Services</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
-<header>
-  <img class="banner" src="images/banner.png" alt="Men2zAI Banner">
-</header>
-
-  <!-- 🟦 FIN: Banner principal -->
-<section class="services">
-  <h2 class="section-title">Nuestros Servicios / Our Services</h2>
-  <div class="services-container">
-    <div class="service-box">
-      <img src="icons/ai.png" alt="AI" />
-      <p>Inteligencia Artificial / AI Solutions</p>
-    </div>
-    <div class="service-box">
-      <img src="icons/webapp.png" alt="Web App" />
-      <p>Aplicaciones Web / Web Apps</p>
-    </div>
-    <div class="service-box">
-      <img src="icons/iot.png" alt="IoT" />
-      <p>IoT y Automatización / IoT & Automation</p>
-    </div>
-    <div class="service-box">
-      <img src="icons/robot.png" alt="Bots" />
-      <p>Bots & RPA / Bots & Automation</p>
-    </div>
-  </div>
-</section>
-
-  <main class="container">
-    <h1>Bienvenido a Men2zAI</h1>
-    <p>Tu socio estratégico en automatización, inteligencia artificial y desarrollo de soluciones tecnológicas.</p>
-
-    <section>
-      <h2>¿Qué hacemos?</h2>
+  <header>
+    <div class="logo">Vice<span class="ai">AI</span>Lab</div>
+    <nav>
       <ul>
-        <li>Automatización de procesos</li>
-        <li>Desarrollo de bots y asistentes virtuales</li>
-        <li>WebApps personalizadas</li>
-        <li>Aplicaciones móviles eficientes</li>
-        <li>Soluciones IoT y sistemas embebidos</li>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
-    </section>
+    </nav>
+    <button class="lang-switch" onclick="window.location.href='index_en.html'">EN</button>
+  </header>
 
-    <section>
-      <h2>Contáctanos</h2>
-      <p>📧 Email: tuemail@men2zai.com</p>
-      <p>📨 Telegram: <a href="https://t.me/+5pY_HK4JqgA5MmUx" target="_blank">@men2zai</a></p>
-    </section>
+  <section id="hero">
+    <h1>Soluciones IA e IoT a tu alcance</h1>
+    <p>Desarrollamos ideas inteligentes para un mundo conectado</p>
+    <a href="#services" class="cta">Ver servicios</a>
+  </section>
 
-    <section class="catalogo">
-  <h2>Catálogo de Servicios</h2>
-  <div class="servicios-grid">
-    <div class="servicio">
-      <img src="icons/robot.png" alt="Bot">
-      <h3>Automatización y Bots</h3>
-      <p>Diseño de bots y flujos automáticos para tareas repetitivas o atención al cliente.</p>
+  <section id="services" class="services">
+    <h2 class="section-title">Catálogo de Servicios</h2>
+    <div class="services-container">
+      <div class="service-box">
+        <img src="icons/ai-webapp.png" alt="AI Webapp">
+        <p>Desarrollo de apps con inteligencia artificial</p>
+      </div>
+      <div class="service-box">
+        <img src="icons/iot.png" alt="IoT">
+        <p>Proyectos IoT personalizados con Arduino o ESP</p>
+      </div>
+      <div class="service-box">
+        <img src="icons/robot.png" alt="Robótica">
+        <p>Automatización y robótica con visión artificial</p>
+      </div>
+      <div class="service-box">
+        <img src="icons/webapp.png" alt="Web App">
+        <p>Diseño de sitios web funcionales y responsivos</p>
+      </div>
     </div>
-    <div class="servicio">
-      <img src="icons/app.png" alt="App">
-      <h3>Aplicaciones Móviles</h3>
-      <p>Desarrollo rápido y funcional de apps Android y multiplataforma.</p>
-    </div>
-    <div class="servicio">
-      <img src="icons/iot.png" alt="IoT">
-      <h3>Soluciones IoT</h3>
-      <p>Proyectos con sensores, placas Arduino, ESP32 y monitoreo en tiempo real.</p>
-    </div>
-    <div class="servicio">
-      <img src="icons/webapp.png" alt="WebApp">
-      <h3>WebApps Inteligentes</h3>
-      <p>Apps web personalizadas con diseño moderno, formularios y administración.</p>
-    </div>
-    <div class="servicio">
-      <img src="icons/ai.png" alt="AI">
-      <h3>Inteligencia Artificial</h3>
-      <p>Integración de IA en sistemas, bots con lenguaje natural, generación de contenido.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-    <footer>
-      <p>&copy; 2025 Men2zAI - Todos los derechos reservados.</p>
-      <p><a href="index_en.html">🌐 English</a></p>
-    </footer>
-  </main>
+  <footer>
+    <p>&copy; 2025 ViceAI Lab. Todos los derechos reservados.</p>
+    <p><a href="#">Contacto</a> | <a href="#">Términos</a></p>
+  </footer>
 </body>
 </html>

@@ -60,17 +60,9 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* Secciones */
-section {
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Hero */
+/* Hero con banner */
 #hero {
-  background: url('banner.jpg') no-repeat center center/cover;
+  background: url('banner.png') no-repeat center center/cover;
   color: white;
   height: 60vh;
   display: flex;
@@ -105,61 +97,7 @@ section {
   background: #004ec9;
 }
 
-/* Tarjetas de catálogo */
-.catalog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  color: #0066ff;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-}
-
-/* Footer */
-footer {
-  background: #343a40;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 2rem;
-  margin-top: 3rem;
-}
-
-footer a {
-  color: #00bfff;
-  text-decoration: none;
-}
-.hero-banner {
-  width: 100%;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.hero-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-bottom: 2px solid #00ffff;
-  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-}
+/* Servicios */
 .services {
   padding: 40px 20px;
   text-align: center;
@@ -186,6 +124,7 @@ footer a {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  text-align: center;
 }
 
 .service-box:hover {
@@ -193,14 +132,27 @@ footer a {
 }
 
 .service-box img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   margin-bottom: 15px;
 }
 
 .service-box p {
-  font-size: 16px;
+  font-size: 15px;
   color: #555;
 }
 
+/* Footer */
+footer {
+  background: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #00bfff;
+  text-decoration: none;
+}

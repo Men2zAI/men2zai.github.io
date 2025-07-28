@@ -1,28 +1,46 @@
-<!-- index.html actualizado -->
-...
-<section id="portfolio" class="portfolio">
-  <h2 class="section-title">Nuestros Proyectos</h2>
-  <div class="portfolio-container">
-    <div class="portfolio-item">
-      <img src="proyectos/proyecto1.png" alt="Proyecto 1">
-      <h3>Monitoreo Ambiental IoT</h3>
-      <p>Sensorización con Arduino y dashboard web con Chart.js</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="proyectos/proyecto2.png" alt="Proyecto 2">
-      <h3>Detección de Fatiga con IA</h3>
-      <p>Visión artificial y procesamiento Edge con Raspberry Pi</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="ai-webapp/sentiment-classifier/images/demo.png" alt="Proyecto 3">
-      <h3>Clasificador de Sentimientos</h3>
-      <p>App IA para detectar sentimiento positivo, neutral o negativo en texto</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="proyectos/proyecto4.png" alt="Proyecto 4">
-      <h3>Herramienta Contable Web</h3>
-      <p>App simple para registrar ingresos y gastos de emprendedores</p>
-    </div>
-  </div>
-</section>
-...
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Herramienta Contable</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Men2zAI - Herramienta Contable</h1>
+    <button onclick="window.location.href='index_en.html'">EN</button>
+  </header>
+
+  <section class="app">
+    <form id="entryForm">
+      <input type="text" id="concept" placeholder="Concepto" required />
+      <input type="number" id="amount" placeholder="Monto" required />
+      <select id="type">
+        <option value="income">Ingreso</option>
+        <option value="expense">Gasto</option>
+      </select>
+      <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Historial</h2>
+    <table id="recordsTable">
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Monto</th>
+          <th>Tipo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>Totales</h3>
+    <p>Ingresos: $<span id="totalIncome">0</span></p>
+    <p>Gastos: $<span id="totalExpense">0</span></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,46 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Herramienta Contable</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Men2zAI - Herramienta Contable</h1>
-    <button onclick="window.location.href='index_en.html'">EN</button>
+    <h1>Herramienta Contable Básica</h1>
+    <p>Desarrollado por Men2zAI para freelancers y emprendedores</p>
   </header>
-
-  <section class="app">
-    <form id="entryForm">
-      <input type="text" id="concept" placeholder="Concepto" required />
-      <input type="number" id="amount" placeholder="Monto" required />
-      <select id="type">
-        <option value="income">Ingreso</option>
-        <option value="expense">Gasto</option>
-      </select>
-      <button type="submit">Agregar</button>
-    </form>
-
-    <h2>Historial</h2>
-    <table id="recordsTable">
-      <thead>
-        <tr>
-          <th>Concepto</th>
-          <th>Monto</th>
-          <th>Tipo</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <h3>Totales</h3>
-    <p>Ingresos: $<span id="totalIncome">0</span></p>
-    <p>Gastos: $<span id="totalExpense">0</span></p>
-  </section>
-
-  <script src="script.js"></script>
+  <main>
+    <p>Esta aplicación permite registrar ingresos y egresos de manera sencilla directamente en tu navegador. Ideal para control rápido de tus finanzas.</p>
+    <a href="app.html">Ingresar a la Aplicación</a>
+  </main>
+  <footer>
+    <p>&copy; 2025 Men2zAI. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>

@@ -67,19 +67,17 @@ nav a:hover {
 #hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #4ad295, #2ea97d);
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('images/banner.jpg') no-repeat center center/cover;
   color: white;
+
 }
 
-#hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
+#hero h1,
 #hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
+
 
 .cta {
   background-color: white;

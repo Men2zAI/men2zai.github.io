@@ -1,22 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Herramienta Contable</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Men2zAI - Herramienta Contable</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Herramienta Contable Básica</h1>
-    <p>Desarrollado por Men2zAI para freelancers y emprendedores</p>
+    <div class="logo">Men2z<span class="ai">AI</span> Accounting</div>
   </header>
-  <main>
-    <p>Esta aplicación permite registrar ingresos y egresos de manera sencilla directamente en tu navegador. Ideal para control rápido de tus finanzas.</p>
-    <a href="app.html">Ingresar a la Aplicación</a>
-  </main>
-  <footer>
-    <p>&copy; 2025 Men2zAI. Todos los derechos reservados.</p>
-  </footer>
+
+  <div class="container">
+    <h1>Registro de Ingresos y Gastos</h1>
+
+    <input type="text" id="desc" placeholder="Descripción" />
+    <input type="number" id="amount" placeholder="Monto" />
+    <select id="type">
+      <option value="income">Ingreso</option>
+      <option value="expense">Gasto</option>
+    </select>
+    <button onclick="addEntry()">Agregar</button>
+
+    <div id="entries"></div>
+
+    <div class="totals" id="totals"></div>
+  </div>
+
+  <script>
+    let entries = JSON.parse(localStorage.getItem("accountingEntries")) || [];
+
+    function renderEntries() {
+      const entriesDiv = document.getElementById("entries");
+      const totalsDiv = document.getElementById("totals");
+      entriesDiv.innerHTML = "";
+      let income = 0, expense = 0;
+
+      entries.forEach((entry, index) => {
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.innerHTML = `
+          <strong>${entry.type === "income" ? "Ingreso" : "Gasto"}:</strong>
+          ${entry.desc} - $${entry.amount.toFixed(2)}
+          <button onclick="removeEntry(${index})">Eliminar</button>
+        `;
+        entriesDiv.appendChild(div);
+
+        if (entry.type === "income") income += entry.amount;
+        else expense += entry.amount;
+      });
+
+      totalsDiv.innerText = `Total Ingresos: $${income.toFixed(2)} | Total Gastos: $${expense.toFixed(2)} | Balance: $${(income - expense).toFixed(2)}`;
+    }
+
+    function addEntry() {
+      const desc = document.getElementById("desc").value;
+      const amount = parseFloat(document.getElementById("amount").value);
+      const type = document.getElementById("type").value;
+
+      if (!desc || isNaN(amount)) return alert("Completa todos los campos correctamente.");
+
+      entries.push({ desc, amount, type });
+      localStorage.setItem("accountingEntries", JSON.stringify(entries));
+      renderEntries();
+      document.getElementById("desc").value = "";
+      document.getElementById("amount").value = "";
+    }
+
+    function removeEntry(index) {
+      entries.splice(index, 1);
+      localStorage.setItem("accountingEntries", JSON.stringify(entries));
+      renderEntries();
+    }
+
+    renderEntries();
+  </script>
 </body>
 </html>

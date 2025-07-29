@@ -5,126 +5,120 @@
   box-sizing: border-box;
 }
 
-/* Tipografía */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f9fa;
-  color: #212529;
+  background-color: #f4f4f4;
+  color: #333;
   line-height: 1.6;
 }
 
-/* Encabezado */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header */
 header {
-  background: #ffffff;
-  padding: 1.2rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #343a40;
 }
 
 .logo .ai {
-  color: #0066ff;
+  color: #4ad295;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  list-style: none;
 }
 
 nav a {
-  text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #0066ff;
+  color: #4ad295;
 }
 
 .lang-switch {
-  background: none;
+  background-color: #4ad295;
   border: none;
-  font-size: 1.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* Hero con banner */
+/* Hero Section */
 #hero {
-  background: url('banner.png') no-repeat center center/cover;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #4ad295, #2ea97d);
   color: white;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 1px 1px 3px #000;
 }
 
 #hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 #hero p {
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .cta {
-  padding: 0.8rem 1.5rem;
-  background: #0066ff;
-  color: white;
-  border: none;
-  text-decoration: none;
+  background-color: white;
+  color: #2ea97d;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   font-weight: bold;
-  border-radius: 6px;
   transition: background 0.3s;
 }
 
 .cta:hover {
-  background: #004ec9;
+  background-color: #e1e1e1;
 }
 
-/* Servicios */
-.services {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
+/* Section Titles */
 .section-title {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #333;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  font-size: 2rem;
+  color: #2ea97d;
 }
 
+/* Services Section */
 .services-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 2rem;
+  padding: 0 2rem 2rem;
 }
 
 .service-box {
-  width: 200px;
-  padding: 15px;
-  background: white;
+  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  padding: 1rem;
+  width: 220px;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .service-box:hover {
@@ -132,27 +126,76 @@ nav a:hover {
 }
 
 .service-box img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 15px;
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
 
-.service-box p {
-  font-size: 15px;
-  color: #555;
+/* Portfolio Section */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 2rem 2rem;
+}
+
+.portfolio-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.03);
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonios {
+  background-color: #fff;
+  padding: 3rem 2rem;
+}
+
+.testimonial-box {
+  background-color: #f0f0f0;
+  border-left: 4px solid #4ad295;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 700px;
+  border-radius: 8px;
+}
+
+.testimonial-box span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
 }
 
 /* Footer */
 footer {
-  background: #343a40;
-  color: #fff;
+  background-color: #111;
+  color: #aaa;
   text-align: center;
-  padding: 1.5rem 2rem;
-  margin-top: 3rem;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
 }
 
 footer a {
-  color: #00bfff;
-  text-decoration: none;
+  color: #aaa;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: #4ad295;
 }

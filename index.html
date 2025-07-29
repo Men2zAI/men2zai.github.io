@@ -1,22 +1,106 @@
+<!-- index.html actualizado con sección de proyectos, comentarios y soporte bilingüe -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Herramienta Contable</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men2zAI Servicios</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Herramienta Contable Básica</h1>
-    <p>Desarrollado por Men2zAI para freelancers y emprendedores</p>
+    <div class="logo">Men2z<span class="ai">AI</span></div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#portfolio">Proyectos</a></li>
+        <li><a href="#testimonios">Opiniones</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="lang-switch" onclick="window.location.href='index_en.html'">EN</button>
   </header>
-  <main>
-    <p>Esta aplicación permite registrar ingresos y egresos de manera sencilla directamente en tu navegador. Ideal para control rápido de tus finanzas.</p>
-    <a href="app.html">Ingresar a la Aplicación</a>
-  </main>
+
+  <section id="hero">
+    <h1>Soluciones IA e IoT a tu alcance</h1>
+    <p>Desarrollamos ideas inteligentes para un mundo conectado</p>
+    <a href="#services" class="cta">Ver servicios</a>
+  </section>
+
+  <section id="services" class="services">
+    <h2 class="section-title">Catálogo de Servicios</h2>
+    <div class="services-container">
+      <div class="service-box">
+        <a href="ai-webapp.html">
+          <img src="icons/ai.png" alt="AI Webapp">
+          <p>Desarrollo de apps con inteligencia artificial</p>
+        </a>
+      </div>
+      <div class="service-box">
+        <a href="iot.html">
+          <img src="icons/iot.png" alt="IoT">
+          <p>Proyectos IoT personalizados con Arduino o ESP</p>
+        </a>
+      </div>
+      <div class="service-box">
+        <a href="robot.html">
+          <img src="icons/robot.png" alt="Robótica">
+          <p>Automatización y robótica con visión artificial</p>
+        </a>
+      </div>
+      <div class="service-box">
+        <a href="webapp.html">
+          <img src="icons/webapp.png" alt="Web App">
+          <p>Diseño de sitios web funcionales y responsivos</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Nuestros Proyectos</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="proyectos/proyecto1.png" alt="Proyecto 1">
+        <h3>Monitoreo Ambiental IoT</h3>
+        <p>Sensorización con Arduino y dashboard web con Chart.js</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="proyectos/proyecto2.png" alt="Proyecto 2">
+        <h3>Detección de Fatiga con IA</h3>
+        <p>Visión artificial y procesamiento Edge con Raspberry Pi</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="ai-webapp/sentiment-classifier/images/demo.png" alt="Proyecto 3">
+        <h3>Clasificador de Sentimientos</h3>
+        <p>Aplicación que analiza texto para detectar sentimiento positivo, neutro o negativo</p>
+      </div>
+      <div class="portfolio-item">
+        <a href="webapp/accounting-tool/index.html">
+          <img src="webapp/accounting-tool/images/demo.png" alt="Proyecto 4">
+          <h3>WebApp Contable Básica</h3>
+          <p>Herramienta sencilla para registrar ingresos y egresos de freelancers o emprendedores</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="testimonios">
+    <h2 class="section-title">Qué dicen nuestros clientes</h2>
+    <div class="testimonial-box">
+      <p>"Gracias a Men2zAI Lab ahora tengo mi sistema IoT funcionando sin problemas. ¡Un equipo brillante!"</p>
+      <span>– Juan R., Ingeniero Eléctrico</span>
+    </div>
+    <div class="testimonial-box">
+      <p>"Los contacté para una app con IA y superaron mis expectativas. 100% recomendados."</p>
+      <span>– Carla M., Fundadora de Startup</span>
+    </div>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Men2zAI. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Men2zAI Lab. Todos los derechos reservados.</p>
+    <p><a href="#contact">Contacto</a> | <a href="#">Términos</a></p>
   </footer>
 </body>
 </html>

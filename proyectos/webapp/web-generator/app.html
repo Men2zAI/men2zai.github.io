@@ -2,47 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Men2zAI Web Builder – App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men2zAI Web Builder - Generador</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>🧠 Men2zAI Web Builder</h1>
-    <p class="subtitle">Crea tu propia página web con un clic</p>
+    <p class="subtitle">Crea páginas HTML automáticamente según tu necesidad</p>
   </header>
 
   <main>
-    <section>
-      <h2>1. Selecciona la plantilla</h2>
-      <select id="template">
-        <option value="menu">Página de Menú</option>
+    <section class="generator">
+      <h2>🧩 Elige una plantilla</h2>
+      <select id="templateSelector">
+        <option value="menu">Menú de Restaurante</option>
         <option value="portfolio">Portafolio Personal</option>
-        <option value="personal">Presentación Profesional</option>
+        <option value="presentacion">Presentación Simple</option>
       </select>
     </section>
 
-    <section>
-      <h2>2. Introduce tu información</h2>
-      <textarea id="inputData" placeholder="Nombre del sitio, descripción, enlaces..." rows="8"></textarea>
+    <section id="formSection">
+      <h2>✍️ Llena los campos</h2>
+      <form id="dataForm"></form>
     </section>
 
     <section>
-      <button onclick="generateHTML()">Generar Página</button>
+      <button id="generateBtn">Generar HTML</button>
     </section>
 
     <section>
-      <h2>Vista Previa</h2>
-      <iframe id="preview" style="width:100%; height:300px; border:1px solid #ccc;"></iframe>
+      <h2>👀 Vista Previa</h2>
+      <iframe id="preview" style="width:100%;height:300px;border:1px solid #ccc;"></iframe>
     </section>
 
     <section>
-      <button onclick="downloadHTML()">Descargar HTML</button>
+      <button id="downloadBtn" style="display:none;">Descargar HTML</button>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Men2zAI. Herramienta desarrollada por Men2zAI Lab.</p>
+    <p>© 2025 Men2zAI. Desarrollado por Men2zAI Lab.</p>
   </footer>
 
   <script src="script.js"></script>

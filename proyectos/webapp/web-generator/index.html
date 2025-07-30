@@ -10,6 +10,7 @@
   <header>
     <h1>🧠 Men2zAI Web Builder</h1>
     <p class="subtitle">Genera páginas HTML simples automáticamente</p>
+    <button class="lang-switch" onclick="window.location.href='index_en.html'">EN</button>
   </header>
 
   <main>
@@ -26,18 +27,31 @@
       <img src="images/demo.png" alt="Demo Men2zAI Web Builder" />
     </section>
 
-    <section class="instructions">
-      <h2>¿Cómo funciona?</h2>
-      <ol>
-        <li>Selecciona el tipo de página que deseas generar.</li>
-        <li>Llena un formulario con los datos clave (nombres, enlaces, textos, etc).</li>
-        <li>Presiona el botón “Generar” y obtendrás tu archivo HTML descargable.</li>
-      </ol>
+    <section class="formulario">
+      <h2>Generador de Página</h2>
+      <form id="web-form">
+        <label for="pageType">Tipo de página:</label>
+        <select id="pageType" name="pageType">
+          <option value="menu">Menú</option>
+          <option value="portafolio">Portafolio</option>
+          <option value="personal">Presentación personal</option>
+        </select>
+
+        <label for="title">Título de la página:</label>
+        <input type="text" id="title" name="title" placeholder="Ejemplo: Mi sitio web" required />
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" placeholder="Una breve descripción..." required></textarea>
+
+        <button type="submit">Generar HTML</button>
+      </form>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Men2zAI. Desarrollado por Men2zAI Lab como herramienta libre para generar páginas web.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

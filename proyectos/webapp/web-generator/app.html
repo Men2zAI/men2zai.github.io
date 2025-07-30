@@ -3,42 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Generador HTML - Men2zAI Web Builder</title>
+  <title>🧠 Men2zAI Web Builder</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>🧠 Men2zAI Web Builder</h1>
-    <p class="subtitle">Generador de páginas HTML simples y automáticas</p>
+    <p class="subtitle">Genera tu propia página web en segundos</p>
   </header>
 
   <main>
-    <section class="form-section">
-      <h2>1. Elige una plantilla</h2>
-      <select id="templateSelector">
+    <section class="generator">
+      <h2>Selecciona una plantilla</h2>
+      <select id="template">
         <option value="menu">Menú de restaurante</option>
         <option value="portfolio">Portafolio personal</option>
-        <option value="presentacion">Presentación simple</option>
+        <option value="presentacion">Presentación profesional</option>
       </select>
+
+      <div id="formulario-dinamico"></div>
+
+      <button onclick="generarPagina()">Generar HTML</button>
+      <button onclick="descargar()">Descargar</button>
     </section>
 
-    <section class="form-section">
-      <h2>2. Ingresa los datos</h2>
-      <form id="dataForm">
-        <!-- Campos dinámicos según plantilla -->
-      </form>
-      <button id="generateBtn">Generar HTML</button>
-    </section>
-
-    <section class="form-section">
-      <h2>3. Vista previa</h2>
-      <iframe id="preview" class="preview"></iframe>
-      <a id="downloadBtn" href="#" download="pagina.html">📥 Descargar archivo</a>
+    <section class="preview">
+      <h2>Vista previa</h2>
+      <iframe id="preview-frame"></iframe>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Men2zAI Lab - Herramienta de creación automática de sitios web</p>
+    <p>© 2025 Men2zAI Lab. Todos los derechos reservados.</p>
   </footer>
 
   <script src="script.js"></script>

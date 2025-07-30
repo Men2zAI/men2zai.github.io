@@ -1,43 +1,43 @@
-document.getElementById('web-form').addEventListener('submit', function (e) {
-  e.preventDefault();
+function generateHTML() {
+  const type = document.getElementById("template").value;
+  const input = document.getElementById("inputData").value.trim().split("\n");
 
-  const pageType = document.getElementById('pageType').value;
-  const title = document.getElementById('title').value;
-  const description = document.getElementById('description').value;
-
-  const htmlContent = `
+  let html = `
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>${title}</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1 { color: #2c3e50; }
-    .section { margin-top: 2rem; }
-  </style>
+  <title>${input[0] || 'Mi Web'}</title>
 </head>
 <body>
-  <h1>${title}</h1>
-  <p>${description}</p>
-
-  <div class="section">
-    <h2>Contenido: ${pageType}</h2>
-    <p>Esta sección está diseñada como una plantilla para una página de tipo <strong>${pageType}</strong>.</p>
-  </div>
-</body>
-</html>
+  <h1>${input[0] || 'Mi Web'}</h1>
+  <p>${input[1] || ''}</p>
+  <ul>
 `;
 
-  const blob = new Blob([htmlContent], { type: "text/html" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = `${pageType}_page.html`;
-  link.click();
-});
+  for (let i = 2; i < input.length; i++) {
+    html += `<li>${input[i]}</li>\n`;
+  }
+
+  html += `
+  </ul>
+</body>
+</html>`;
+
+  const iframe = document.getElementById("preview");
+  const doc = iframe.contentWindow.document;
+  doc.open();
+  doc.write(html);
+  doc.close();
+
+  window.generatedHTML = html;
+}
+
+function downloadHTML() {
+  if (!window.generatedHTML) return alert("Primero genera la página");
+  const blob = new Blob([window.generatedHTML], { type: "text/html" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "pagina-generada.html";
+  a.click();
+}

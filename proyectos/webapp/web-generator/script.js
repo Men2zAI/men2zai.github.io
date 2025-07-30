@@ -1,89 +1,71 @@
-const templates = {
-  menu: {
-    nombreRestaurante: "Nombre del Restaurante",
-    descripcion: "Descripción del menú",
-    plato1: "Plato 1",
-    precio1: "Precio 1",
-    plato2: "Plato 2",
-    precio2: "Precio 2"
-  },
-  portfolio: {
-    nombre: "Tu nombre",
-    profesion: "Profesión o especialidad",
-    sobreMi: "Descripción personal",
-    proyecto1: "Nombre del proyecto 1",
-    link1: "Enlace proyecto 1"
-  },
-  presentacion: {
-    titulo: "Título de la presentación",
-    contenido: "Contenido principal",
-    contacto: "Email o enlace de contacto"
-  }
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const templateSelector = document.getElementById("templateSelector");
+  const dataForm = document.getElementById("dataForm");
+  const generateBtn = document.getElementById("generateBtn");
+  const preview = document.getElementById("preview");
+  const downloadBtn = document.getElementById("downloadBtn");
 
-document.getElementById("templateSelector").addEventListener("change", loadForm);
-document.getElementById("generateBtn").addEventListener("click", generateHTML);
-document.getElementById("downloadBtn").addEventListener("click", downloadHTML);
+  const templates = {
+    menu: {
+      campos: ["Nombre del restaurante", "Elemento 1", "Precio 1", "Elemento 2", "Precio 2"],
+      generar: (datos) => `
+        <h1>${datos[0]}</h1>
+        <ul>
+          <li>${datos[1]} - ${datos[2]}</li>
+          <li>${datos[3]} - ${datos[4]}</li>
+        </ul>
+      `
+    },
+    portfolio: {
+      campos: ["Nombre", "Profesión", "Descripción corta", "Enlace a redes"],
+      generar: (datos) => `
+        <h1>${datos[0]}</h1>
+        <h2>${datos[1]}</h2>
+        <p>${datos[2]}</p>
+        <a href="${datos[3]}" target="_blank">Ver más</a>
+      `
+    },
+    presentacion: {
+      campos: ["Título", "Subtítulo", "Contenido"],
+      generar: (datos) => `
+        <h1>${datos[0]}</h1>
+        <h3>${datos[1]}</h3>
+        <p>${datos[2]}</p>
+      `
+    }
+  };
 
-function loadForm() {
-  const type = document.getElementById("templateSelector").value;
-  const form = document.getElementById("dataForm");
-  form.innerHTML = "";
-  for (let key in templates[type]) {
-    form.innerHTML += `
-      <label>${templates[type][key]}</label>
-      <input type="text" name="${key}" required />
-    `;
-  }
-}
-
-function generateHTML() {
-  const type = document.getElementById("templateSelector").value;
-  const formData = Object.fromEntries(new FormData(document.getElementById("dataForm")).entries());
-
-  let htmlContent = "";
-
-  if (type === "menu") {
-    htmlContent = `
-      <h1>${formData.nombreRestaurante}</h1>
-      <p>${formData.descripcion}</p>
-      <ul>
-        <li>${formData.plato1} - ${formData.precio1}</li>
-        <li>${formData.plato2} - ${formData.precio2}</li>
-      </ul>
-    `;
-  } else if (type === "portfolio") {
-    htmlContent = `
-      <h1>${formData.nombre}</h1>
-      <h2>${formData.profesion}</h2>
-      <p>${formData.sobreMi}</p>
-      <a href="${formData.link1}">${formData.proyecto1}</a>
-    `;
-  } else if (type === "presentacion") {
-    htmlContent = `
-      <h1>${formData.titulo}</h1>
-      <p>${formData.contenido}</p>
-      <p>Contacto: ${formData.contacto}</p>
-    `;
+  function crearCampos(plantilla) {
+    dataForm.innerHTML = "";
+    templates[plantilla].campos.forEach((campo, i) => {
+      const input = document.createElement("input");
+      input.placeholder = campo;
+      input.name = `campo${i}`;
+      input.required = true;
+      dataForm.appendChild(input);
+    });
   }
 
-  const finalHTML = `
-    <!DOCTYPE html>
-    <html><head><meta charset="UTF-8"><title>Generado</title></head>
-    <body>${htmlContent}</body></html>
-  `;
+  templateSelector.addEventListener("change", () => {
+    crearCampos(templateSelector.value);
+  });
 
-  document.getElementById("preview").srcdoc = finalHTML;
-  document.getElementById("downloadBtn").style.display = "inline-block";
-  window.generatedHTML = finalHTML;
-}
+  generateBtn.addEventListener("click", () => {
+    const plantilla = templateSelector.value;
+    const inputs = dataForm.querySelectorAll("input");
+    const datos = Array.from(inputs).map(input => input.value);
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="UTF-8"><title>${datos[0]}</title></head>
+      <body>${templates[plantilla].generar(datos)}</body>
+      </html>`;
 
-function downloadHTML() {
-  const blob = new Blob([window.generatedHTML], { type: "text/html" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "pagina_generada.html";
-  a.click();
-  URL.revokeObjectURL(url);
-}
+    const blob = new Blob([htmlContent], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    preview.src = url;
+    downloadBtn.href = url;
+  });
+
+  crearCampos(templateSelector.value); // inicial
+});

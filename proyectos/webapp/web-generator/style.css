@@ -1,3 +1,108 @@
+/* style.css completo para Men2zAI Web Builder */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(135deg, #002f4b, #005f6b);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #b3e5fc;
+  margin-top: 0.5rem;
+}
+
+.lang-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  background: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button[type="submit"], #downloadBtn {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background: #004d61;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #007c91;
+}
+
+#previewContainer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  background: #002f4b;
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
 .generator, #formSection {
   margin-bottom: 2rem;
 }
@@ -25,3 +130,4 @@ button {
 button:hover {
   background-color: #00778b;
 }
+

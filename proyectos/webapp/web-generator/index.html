@@ -9,47 +9,44 @@
 <body>
   <header>
     <h1>🧠 Men2zAI Web Builder</h1>
-    <p class="subtitle">Genera páginas HTML simples automáticamente</p>
-    <button class="lang-switch" onclick="window.location.href='index_en.html'">EN</button>
+    <p class="subtitle">Genera páginas HTML personalizadas sin programar</p>
+    <button onclick="window.location.href='index_en.html'" class="lang-btn">EN</button>
   </header>
 
   <main>
-    <section class="description">
-      <h2>¿Qué es esta herramienta?</h2>
-      <p>
-        Esta aplicación web permite crear páginas HTML básicas como menús, portafolios o presentaciones personales sin necesidad de escribir código.
-        Ideal para estudiantes, emprendedores o cualquier persona que necesite una presencia online rápida.
-      </p>
-    </section>
-
-    <section class="demo">
-      <h2>Vista previa</h2>
-      <img src="images/demo.png" alt="Demo Men2zAI Web Builder" />
-    </section>
-
-    <section class="formulario">
-      <h2>Generador de Página</h2>
-      <form id="web-form">
-        <label for="pageType">Tipo de página:</label>
-        <select id="pageType" name="pageType">
+    <section class="form-section">
+      <h2>Crear página web</h2>
+      <form id="webForm">
+        <label for="type">Tipo de página:</label>
+        <select id="type" name="type">
           <option value="menu">Menú</option>
           <option value="portafolio">Portafolio</option>
-          <option value="personal">Presentación personal</option>
+          <option value="personal">Presentación Personal</option>
         </select>
 
         <label for="title">Título de la página:</label>
-        <input type="text" id="title" name="title" placeholder="Ejemplo: Mi sitio web" required />
+        <input type="text" id="title" name="title" required />
 
-        <label for="description">Descripción:</label>
-        <textarea id="description" name="description" placeholder="Una breve descripción..." required></textarea>
+        <label for="desc">Descripción:</label>
+        <textarea id="desc" name="desc" required></textarea>
 
-        <button type="submit">Generar HTML</button>
+        <label for="bgcolor">Color de fondo:</label>
+        <input type="color" id="bgcolor" name="bgcolor" value="#ffffff" />
+
+        <button type="submit">Generar Página</button>
       </form>
+
+      <div id="previewContainer">
+        <h3>Vista previa:</h3>
+        <iframe id="preview" title="Preview"></iframe>
+      </div>
+
+      <button id="downloadBtn" class="hidden">Descargar HTML</button>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Men2zAI. Desarrollado por Men2zAI Lab como herramienta libre para generar páginas web.</p>
+    <p>© 2025 Men2zAI. Herramienta creada por Men2zAI Lab para generar páginas web simples.</p>
   </footer>
 
   <script src="script.js"></script>

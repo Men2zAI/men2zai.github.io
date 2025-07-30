@@ -1,134 +1,149 @@
-const templateSelect = document.getElementById("templateSelect");
-const formSection = document.getElementById("formSection");
+// Referencias a elementos
+const templateSelector = document.getElementById("templateSelector");
+const dynamicForm = document.getElementById("dynamicForm");
+const generateBtn = document.getElementById("generateBtn");
+const downloadBtn = document.getElementById("downloadBtn");
 const previewFrame = document.getElementById("previewFrame");
-const previewSection = document.getElementById("previewSection");
 
-// Plantillas base
+// Estructura de plantillas
 const templates = {
+  basic: {
+    name: "Página Básica",
+    fields: [
+      { label: "Título", name: "title", type: "text" },
+      { label: "Descripción", name: "description", type: "textarea" }
+    ],
+    generateHTML: (data) => `
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <title>${data.title}</title>
+      </head>
+      <body>
+        <h1>${data.title}</h1>
+        <p>${data.description}</p>
+      </body>
+      </html>
+    `
+  },
   menu: {
-    form: `
-      <h2>Datos del Menú</h2>
-      <label>Nombre del restaurante: <input type="text" id="nombreRest" /></label><br>
-      <label>Plato 1: <input type="text" id="plato1" /></label><br>
-      <label>Plato 2: <input type="text" id="plato2" /></label><br>
-      <label>Plato 3: <input type="text" id="plato3" /></label><br>
-    `,
-    generate: () => {
-      const nombre = document.getElementById("nombreRest").value;
-      const p1 = document.getElementById("plato1").value;
-      const p2 = document.getElementById("plato2").value;
-      const p3 = document.getElementById("plato3").value;
-      return `
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>${nombre}</title></head>
-<body>
-  <h1>${nombre}</h1>
-  <h2>Menú</h2>
-  <ul>
-    <li>${p1}</li>
-    <li>${p2}</li>
-    <li>${p3}</li>
-  </ul>
-  <footer><p>Generado con Men2zAI Web Builder</p></footer>
-</body>
-</html>
-      `;
-    }
+    name: "Menú de Restaurante",
+    fields: [
+      { label: "Nombre del Restaurante", name: "restaurant", type: "text" },
+      { label: "Entradas", name: "starters", type: "textarea" },
+      { label: "Platos principales", name: "mains", type: "textarea" },
+      { label: "Postres", name: "desserts", type: "textarea" }
+    ],
+    generateHTML: (data) => `
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <title>${data.restaurant}</title>
+      </head>
+      <body>
+        <h1>Menú - ${data.restaurant}</h1>
+        <h2>Entradas</h2><p>${data.starters.replace(/\n/g, "<br>")}</p>
+        <h2>Platos Principales</h2><p>${data.mains.replace(/\n/g, "<br>")}</p>
+        <h2>Postres</h2><p>${data.desserts.replace(/\n/g, "<br>")}</p>
+      </body>
+      </html>
+    `
   },
   portfolio: {
-    form: `
-      <h2>Datos del Portafolio</h2>
-      <label>Tu nombre: <input type="text" id="nombre" /></label><br>
-      <label>Descripción: <input type="text" id="desc" /></label><br>
-      <label>Proyecto destacado: <input type="text" id="proyecto" /></label><br>
-    `,
-    generate: () => {
-      const nombre = document.getElementById("nombre").value;
-      const desc = document.getElementById("desc").value;
-      const proyecto = document.getElementById("proyecto").value;
-      return `
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Portafolio de ${nombre}</title></head>
-<body>
-  <h1>${nombre}</h1>
-  <p>${desc}</p>
-  <h2>Proyecto destacado</h2>
-  <p>${proyecto}</p>
-  <footer><p>Generado con Men2zAI Web Builder</p></footer>
-</body>
-</html>
-      `;
-    }
-  },
-  landing: {
-    form: `
-      <h2>Datos de Presentación</h2>
-      <label>Título principal: <input type="text" id="titulo" /></label><br>
-      <label>Subtítulo: <input type="text" id="subtitulo" /></label><br>
-      <label>Botón CTA (texto): <input type="text" id="boton" /></label><br>
-    `,
-    generate: () => {
-      const titulo = document.getElementById("titulo").value;
-      const subtitulo = document.getElementById("subtitulo").value;
-      const boton = document.getElementById("boton").value;
-      return `
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>${titulo}</title></head>
-<body>
-  <h1>${titulo}</h1>
-  <p>${subtitulo}</p>
-  <button>${boton}</button>
-  <footer><p>Generado con Men2zAI Web Builder</p></footer>
-</body>
-</html>
-      `;
-    }
+    name: "Portafolio Personal",
+    fields: [
+      { label: "Nombre", name: "name", type: "text" },
+      { label: "Descripción", name: "bio", type: "textarea" },
+      { label: "Enlace de contacto", name: "contact", type: "text" }
+    ],
+    generateHTML: (data) => `
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <title>${data.name} - Portafolio</title>
+      </head>
+      <body>
+        <h1>${data.name}</h1>
+        <p>${data.bio}</p>
+        <p>Contacto: <a href="${data.contact}">${data.contact}</a></p>
+      </body>
+      </html>
+    `
   }
 };
 
-// Cargar formulario según plantilla
-function loadTemplateForm() {
-  const value = templateSelect.value;
-  if (!value || !templates[value]) {
-    formSection.innerHTML = "";
-    previewSection.style.display = "none";
-    return;
-  }
-  formSection.innerHTML = templates[value].form;
-  previewSection.style.display = "block";
-  updatePreview();
-  formSection.addEventListener("input", updatePreview);
+// Generar formulario dinámico
+function renderForm(templateKey) {
+  const template = templates[templateKey];
+  dynamicForm.innerHTML = "";
+
+  template.fields.forEach((field) => {
+    const label = document.createElement("label");
+    label.textContent = field.label;
+    const input =
+      field.type === "textarea"
+        ? document.createElement("textarea")
+        : document.createElement("input");
+
+    input.name = field.name;
+    input.required = true;
+    input.className = "form-control";
+
+    dynamicForm.appendChild(label);
+    dynamicForm.appendChild(input);
+  });
 }
 
-// Generar código HTML
-function generateHTML() {
-  const value = templateSelect.value;
-  if (!value || !templates[value]) return "";
-  return templates[value].generate();
+// Recoger los datos del formulario
+function getFormData(templateKey) {
+  const template = templates[templateKey];
+  const data = {};
+  template.fields.forEach((field) => {
+    const input = dynamicForm.elements[field.name];
+    data[field.name] = input.value.trim();
+  });
+  return data;
 }
 
-// Mostrar en el iframe
-function updatePreview() {
-  const html = generateHTML();
-  previewFrame.srcdoc = html;
-}
-
-// Descargar HTML
-function downloadHTML() {
-  const content = generateHTML();
-  const blob = new Blob([content], { type: "text/html" });
+// Mostrar HTML en el iframe de vista previa
+function updatePreview(htmlContent) {
+  const blob = new Blob([htmlContent], { type: "text/html" });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "pagina.html";
-  a.click();
-  URL.revokeObjectURL(url);
+  previewFrame.src = url;
 }
 
-// Modo oscuro
-function toggleTheme() {
-  document.body.classList.toggle("dark-mode");
+// Descargar archivo como .html
+function downloadHTML(filename, htmlContent) {
+  const blob = new Blob([htmlContent], { type: "text/html" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
 }
+
+// Eventos
+templateSelector.addEventListener("change", () => {
+  renderForm(templateSelector.value);
+  downloadBtn.disabled = true;
+  previewFrame.src = "";
+});
+
+generateBtn.addEventListener("click", () => {
+  const templateKey = templateSelector.value;
+  const data = getFormData(templateKey);
+  const htmlContent = templates[templateKey].generateHTML(data);
+  updatePreview(htmlContent);
+  downloadBtn.disabled = false;
+
+  // Guardar para descarga posterior
+  downloadBtn.onclick = () => {
+    const filename = `${templateKey}.html`;
+    downloadHTML(filename, htmlContent);
+  };
+});
+
+// Render inicial
+renderForm(templateSelector.value);

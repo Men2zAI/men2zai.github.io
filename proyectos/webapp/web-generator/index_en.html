@@ -10,34 +10,48 @@
   <header>
     <h1>🧠 Men2zAI Web Builder</h1>
     <p class="subtitle">Automatically generate simple HTML pages</p>
+    <button class="lang-switch" onclick="window.location.href='index.html'">ES</button>
   </header>
 
   <main>
     <section class="description">
       <h2>What is this tool?</h2>
       <p>
-        This web app allows you to create basic HTML pages like menus, portfolios, or personal landing pages without writing a single line of code.
-        Ideal for students, entrepreneurs, or anyone needing a quick online presence.
+        This web app lets you generate basic HTML pages like menus, portfolios, or personal presentations without writing any code.
+        Perfect for students, entrepreneurs, or anyone who needs a quick online presence.
       </p>
     </section>
 
     <section class="demo">
       <h2>Preview</h2>
-      <img src="images/demo.png" alt="Men2zAI Web Builder Demo" />
+      <img src="images/demo.png" alt="Demo Men2zAI Web Builder" />
     </section>
 
-    <section class="instructions">
-      <h2>How does it work?</h2>
-      <ol>
-        <li>Select the type of page you want to generate.</li>
-        <li>Fill in a form with key data (names, links, text, etc).</li>
-        <li>Click “Generate” and you’ll get your downloadable HTML file.</li>
-      </ol>
+    <section class="formulario">
+      <h2>Page Generator</h2>
+      <form id="web-form">
+        <label for="pageType">Page type:</label>
+        <select id="pageType" name="pageType">
+          <option value="menu">Menu</option>
+          <option value="portafolio">Portfolio</option>
+          <option value="personal">Personal presentation</option>
+        </select>
+
+        <label for="title">Page title:</label>
+        <input type="text" id="title" name="title" placeholder="Example: My Website" required />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="A short description..." required></textarea>
+
+        <button type="submit">Generate HTML</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Men2zAI. Created by Men2zAI Lab as a free tool for generating websites.</p>
+    <p>© 2025 Men2zAI. Developed by Men2zAI Lab as a free tool to create web pages.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

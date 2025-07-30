@@ -7,40 +7,42 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">🌓 Modo</button>
   <header>
     <h1>🧠 Men2zAI Web Builder</h1>
-    <p class="subtitle">Crea tu propia página HTML en segundos</p>
+    <p class="subtitle">Crea páginas HTML personalizadas desde tu navegador</p>
   </header>
 
   <main>
-    <section>
-      <h2>Selecciona una plantilla</h2>
-      <select id="templateSelect" onchange="loadTemplateForm()">
-        <option value="">-- Elige una plantilla --</option>
+    <section class="form-section">
+      <h2>1. Selecciona una plantilla</h2>
+      <select id="templateSelector">
+        <option value="basic">Página Básica</option>
         <option value="menu">Menú de Restaurante</option>
         <option value="portfolio">Portafolio Personal</option>
-        <option value="landing">Página de Presentación</option>
       </select>
     </section>
 
-    <section id="formSection">
-      <!-- Aquí se carga el formulario dinámico -->
+    <section class="form-section">
+      <h2>2. Ingresa la información</h2>
+      <form id="dynamicForm">
+        <!-- Campos dinámicos se insertarán aquí -->
+      </form>
     </section>
 
-    <section id="previewSection" style="display:none;">
-      <h2>Vista previa en tiempo real</h2>
-      <iframe id="previewFrame" style="width: 100%; height: 300px; border: 1px solid #ccc;"></iframe>
+    <section class="form-section">
+      <h2>3. Generar y Descargar</h2>
+      <button id="generateBtn">Generar HTML</button>
+      <button id="downloadBtn" disabled>Descargar</button>
     </section>
 
-    <section>
-      <button onclick="generateHTML()">🔧 Generar HTML</button>
-      <button onclick="downloadHTML()">📥 Descargar</button>
+    <section class="form-section preview-section">
+      <h2>Vista previa</h2>
+      <iframe id="previewFrame" class="preview-frame"></iframe>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Men2zAI. Esta herramienta fue desarrollada por Men2zAI Lab para facilitar la creación de sitios web simples y rápidos.</p>
+    <p>© 2025 Men2zAI. Desarrollado por Men2zAI Lab como herramienta libre para generar páginas web automáticamente.</p>
   </footer>
 
   <script src="script.js"></script>
